@@ -1,7 +1,8 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
-const Cors = require("cors");
+import express from "express";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+import Cors from "cors";
+import noteRoutes from './routes/routes.js';
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ const MONGO_URL = process.env.MONGO_URL;
 //* convert to json
 app.use(express.json());
 app.use(Cors());
+app.use(noteRoutes);
 
 //* DB config
 mongoose

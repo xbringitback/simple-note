@@ -3,13 +3,13 @@
 import axios from "axios";
 
 interface DeleteButtonProps {
-  delete: string;
+  edit: string;
 }
 
-const DeleteButton: React.FC<DeleteButtonProps> = ({ delete: id }) => {
-  const deleteNote = async (id: string) => {
+const DeleteButton: React.FC<DeleteButtonProps> = ({ edit: id }) => {
+  const editNote = async (id: string) => {
     try {
-      await axios.delete(`/api/notes/${id}`);
+      await axios.put(`/api/notes/${id}`);
       window.location.reload();
     } catch (err) {
       console.log(err);
@@ -18,10 +18,10 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({ delete: id }) => {
 
   return (
     <button
-      onClick={() => deleteNote(id)}
+      onClick={() => editNote(id)}
       className="text-xl shadow-md bg-yellow-600 text-black hover:bg-red-500 rounded-xl py-0.5 px-2"
     >
-      X
+      Edit
     </button>
   );
 };

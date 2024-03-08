@@ -1,10 +1,11 @@
 //! GET/POST/PUT/DELETE
 
-const mongoose = require('mongoose');
-const notes = require('../models/notes');
+import mongoose from "mongoose";
+import notes from '../models/notes.js';
+
 
 //* GET Notes
-const getNotes = async (req, res) => {
+export const getNotes = async (req, res) => {
     try {
         const allNotes = await notes.find({}).sort({ createdAt: -1 });
         res.status(200).send(allNotes);
@@ -14,50 +15,55 @@ const getNotes = async (req, res) => {
 }
 
 //* POST Note
-const createNote = async (req, res) => {
-    const dbNote = req.body;
+export const createNote = async (req, res) => {
+    const dbNote = {
+        id: new mongoose.Types.ObjectId(),
+        title: req.body.title,
+        content: req.body.content,
+    };
+
     try {
         const newNote = await notes.create(dbNote);
         res.status(200).send(newNote);
     } catch (error) {
+        console.log(error)
         res.status(500).send({ message: error.message });
     }
 }
 
 //* PUT Note 
-const updateNote = async (req, res) => {
+export const updateNote = async (req, res) => {
     const { id } = req.params;
+    const { title, content } = req.body;
     try {
         //* check if id is valid
-        if (!mongoose.Types.ObjectID.isValid(id)) {
+        if (!id || !mongoose.Types.ObjectId.isValid(id)) {
             return res.status(500).send(`no note with id: ${id}`);
         }
-        const noteID = { _id: id };
-        const newNote = await notes.create(dbNote);
-        res.status(200).send(newNote);
+        //* mongoDB id
+
+        //mongoose
+        const updateNote = await notes.findOneAndUpdate({ _id: id }, { title, content }, { new: true });
+
+        res.status(200).send(updateNote);
     } catch (error) {
         res.status(500).send({ message: error.message });
     }
 }
 
 //* DELETE Note
-const deleteNote = async (req, res) => {
-    const dbNote = req.body;
+export const deleteNote = async (req, res) => {
+    const { id } = req.params;
     try {
-        const newNote = await notes.create(dbNote);
-        res.status(200).send(newNote);
+        //* check if id is valid
+        if (!id || !mongoose.Types.ObjectId.isValid(id)) {
+            return res.status(500).send(`no note with id: ${id}`);
+        }
+        const deleteNote = await notes.findOneAndDelete({ id });
+        console.log(id, deleteNote)
+
+        res.status(200).send(deleteNote);
     } catch (error) {
         res.status(500).send({ message: error.message });
     }
-}
-
-
-
-
-
-module.exports = {
-    getNotes,
-    createNote,
-    updateNote,
-    deleteNote
 }

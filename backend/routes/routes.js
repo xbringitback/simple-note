@@ -1,15 +1,11 @@
-//! GET/POST/PUT/DELETE
+import express from "express";
+import { getNotes, createNote, updateNote, deleteNote } from "./notes.js";
 
-const { getNotes, createNote, updateNote, deleteNote } = require("./notes.js")
+const router = express.Router();
 
-//* GET Notes
-app.get("/notes", getNotes)
+router.get("/api/notes", getNotes)
+router.post("/api/notes", createNote)
+router.put("/api/notes/:id", updateNote)
+router.delete("/api/notes/:id", deleteNote)
 
-//* POST Note
-app.post("/notes", createNote)
-
-//* PUT Note
-app.put("/notes/:id", updateNote)
-
-//* DELETE Note
-app.delete("/notes/:id", deleteNote)
+export default router;
