@@ -12,6 +12,8 @@ This project is a MERN stack note-taking web application built using React, Tail
 
 - **Single Page Application (SPA)**: The application should contain the following components: a list of notes, a form for creating new notes, a delete button for each note, and a search component for filtering the listed notes.
 
+- **Form for Creating a New Note**: The application provides a user-friendly form for creating new notes.
+
 - **Interaction with the Backend API**: Implementation of functions for interacting with the backend API to perform CRUD operations (in this case, only create, list, edit, and delete).
 
 - **Responsive Design**: The application should look and function well on various devices and screen sizes.
