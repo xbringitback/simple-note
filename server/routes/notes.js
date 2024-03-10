@@ -5,7 +5,7 @@ import notes from '../models/notes.js';
 
 // Defining RESTful endpoints
 
-// GET Notes
+//* GET Notes
 // This function is an asynchronous function that gets all notes from the database
 export const getNotes = async (req, res) => {
     try {
@@ -19,7 +19,7 @@ export const getNotes = async (req, res) => {
     }
 }
 
-// POST Note
+//* POST Note
 // This function is an asynchronous function that creates a new note in the database
 export const createNote = async (req, res) => {
     // Creating a new note object with the data from the request body
@@ -40,7 +40,7 @@ export const createNote = async (req, res) => {
     }
 }
 
-// PUT Note
+//* PUT Note
 // This function is an asynchronous function that updates an existing note in the database
 export const updateNote = async (req, res) => {
     // Extracting the note ID from the request parameters
