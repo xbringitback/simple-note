@@ -1,5 +1,5 @@
 {
-  "name": "template-RENAME",
+  "name": "try",
   "version": "1.0.0",
   "description": "",
   "main": "./server/server.js",
@@ -13,6 +13,6 @@
     "server": "npm run dev --prefix server",
     "dev": "concurrently \"npm:dev:*\"",
     "start": "concurrently \"npm run dev --prefix client\" \"npm run dev --prefix server\"",
-    "postinstall": "npm i -prefix client && npm i --prefix server"
+    "postinstall": "npm i --prefix client && npm i --prefix server"
   }
 }
