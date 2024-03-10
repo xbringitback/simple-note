@@ -2,6 +2,10 @@
 
 This project is a MERN stack note-taking web application built using React, Tailwind CSS, TypeScript, Node.js, and Express.js. It features a RESTful API and utilizes an in-memory MongoDB database with a defined schema (title, content, id) for managing notes.
 
+## Demo
+
+![Screenshot_3](https://github.com/xbringitback/simple-note/assets/128373175/ccc9a389-9885-42f4-b49c-82e7ad74d793)
+
 ## Features
 
 - **RESTful Endpoints (GET, POST, PUT, DELETE)**: These endpoints allow for listing all notes (GET), creating a note (POST), editing a note (PUT), and deleting a note (DELETE).
