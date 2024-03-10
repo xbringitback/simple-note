@@ -10,19 +10,19 @@ This project is a MERN stack note-taking web application built using React, Tail
 
 - **RESTful Endpoints (GET, POST, PUT, DELETE)**: These endpoints allow for listing all notes (GET), creating a note (POST), editing a note (PUT), and deleting a note (DELETE).
 
-- **Single Page Application (SPA)**: The application should contain the following components: a list of notes, a form for creating new notes, a delete button for each note, and a search component for filtering the listed notes.
+- **Single Page Application (SPA)**: The application contains the following components: a list of notes, a form for creating new notes, a delete button for each note, and a search component for filtering the listed notes.
 
 - **Form for Creating a New Note**: The application provides a user-friendly form for creating new notes.
 
 - **Interaction with the Backend API**: Implementation of functions for interacting with the backend API to perform CRUD operations (in this case, only create, list, edit, and delete).
 
-- **Responsive Design**: The application should look and function well on various devices and screen sizes.
+- **Responsive Design**: The application looks and works well on different devices and screen sizes.
 
-- **Client-side Validation**: The application should validate user inputs before they are sent to the server.
+- **Client-side Validation**: Application validates user input before it is sent to the server.
 
-- **Search Function**: The application should include a search function to filter notes.
+- **Search Function**: The application includes a search function to filter notes.
 
-- **Real-time Updates**: Users should be able to see notes being added in real time.
+- **Real-time Updates**: Users can see notes being added in real time.
 
 ## Technologies
 
