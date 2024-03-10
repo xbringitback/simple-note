@@ -38,18 +38,14 @@ Clone the Repo
   git clone <reponame>
 ```
 
-Installation of dependencies in client folder for frontend
-
-Installation of dependencies in server folder for backend
+Installation of dependencies
 
 ```bash
 npm i or npm install
 ```
 
-Start server in client folder for frontend
-
-Start server in server folder for backend
+Start Server
 
 ```bash
-npm run dev
+npm run start
 ```
