@@ -6,6 +6,7 @@ import noteRoutes from './routes/routes.js';
 
 dotenv.config();
 
+
 //* App config
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -17,10 +18,14 @@ app.use(express.json());
 app.use(Cors());
 app.use(noteRoutes);
 
+app.get("/", (req, res) => res.send("Vercel"));
+
+
 //* DB config
 mongoose
   .connect(MONGO_URL)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
+
 
 app.listen(PORT, () => console.log(`Server running on Port ${PORT}`));
