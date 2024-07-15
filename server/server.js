@@ -18,6 +18,7 @@ app.use(express.json());
 app.use(Cors());
 app.use(noteRoutes);
 
+//* Vercel Route
 app.get("/", (req, res) => res.send("Vercel"));
 
 
